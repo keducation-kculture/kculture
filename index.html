@@ -105,6 +105,7 @@
             font-style: italic;
         }
         
+        /* 한국어교원 자격증 배너 스타일 */
         .certificate-banner {
             background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
             color: #333;
@@ -227,34 +228,48 @@
             text-decoration: underline;
         }
         
-        .admission-info {
-            background: #e8f4f8;
+        /* 새로운 음성 자료 배너 스타일 */
+        .audio-banner {
+            background: #e8f4f8; /* Admission info light blue background */
             padding: 25px;
             border-radius: 10px;
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
-        
-        .admission-info h3 {
+
+        .audio-banner h3 {
             font-size: 20px;
             color: #0066cc;
             margin-bottom: 15px;
-        }
-        
-        .admission-info p {
-            font-size: 16px;
-            color: #333;
-            line-height: 1.8;
-            margin-bottom: 10px;
-        }
-        
-        .admission-info a {
-            color: #0066cc;
-            text-decoration: none;
             font-weight: bold;
         }
-        
-        .admission-info a:hover {
-            text-decoration: underline;
+
+        .audio-controls-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 500px;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .audio-controls-box audio {
+            flex-grow: 1;
+            height: 40px;
+        }
+
+        .audio-controls-box .download-link {
+            text-decoration: none;
+            padding: 10px 15px;
+            background: #0066cc;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            white-space: nowrap;
         }
         
         @media (max-width: 768px) {
@@ -273,6 +288,13 @@
             .language-selector button {
                 padding: 10px 16px;
                 font-size: 14px;
+            }
+            .audio-controls-box {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .audio-controls-box audio {
+                width: 100%;
             }
         }
     </style>
@@ -295,6 +317,10 @@
                 <div class="department-info">인문대학 국어국문학부</div>
                 <h1>한국어교육-한국문화 전공</h1>
                 <p class="subtitle">Korean Language Education and Korean Culture Major</p>
+            </div>
+
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> 국립국어원 인정 한국어교원 2급 자격증 취득 가능
             </div>
             
             <div class="section">
@@ -356,6 +382,17 @@
                 <div class="contact-info">
                     이메일: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
                     전화: +82-2-820-5084
+                </div>
+            </div>
+
+            <div class="audio-banner">
+                <h3>🔊 전공 소개 음성 자료 (Korean)</h3>
+                <div class="audio-controls-box">
+                    <audio controls>
+                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_kr_long_251106.m4a" type="audio/mp4">
+                        브라우저가 오디오 재생을 지원하지 않습니다.
+                    </audio>
+                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_kr_long_251106.m4a" download class="download-link">⬇ 다운로드</a>
                 </div>
             </div>
         </div>
@@ -430,6 +467,17 @@
                     Phone: +82-2-820-5084
                 </div>
             </div>
+
+            <div class="audio-banner">
+                <h3>🔊 Major Introduction Audio (English)</h3>
+                <div class="audio-controls-box">
+                    <audio controls>
+                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" type="audio/mp4">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" download class="download-link">⬇ Download</a>
+                </div>
+            </div>
         </div>
         
         <div id="zh" class="flyer">
@@ -455,8 +503,7 @@
                         <h3>第二学年</h3>
                         <p>韩国语学概论<br>
                         韩国语语文规范<br>
-                        韩国文学的理解<br>
-                        对比语言学<br>
+                        韩国文学的理解<                        对比语言学<br>
                         韩国语语法研究</p>
                     </div>
                     <div class="year-box">
@@ -500,6 +547,100 @@
                 <div class="contact-info">
                     邮箱：<a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
                     电话：+82-2-820-5084
+                </div>
+            </div>
+
+            <div class="audio-banner">
+                <h3>🔊 专业介绍音频 (中文)</h3>
+                <div class="audio-controls-box">
+                    <audio controls>
+                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_cn_long_251106.m4a" type="audio/mp4">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_cn_long_251106.m4a" download class="download-link">⬇ 下载</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="ja" class="flyer">
+            <div class="header">
+                <div class="university-name">중앙대학교</div>
+                <div class="university-name-en">Chung-Ang University</div>
+                <div class="department-info">人文大学 国語国文学部</div>
+                <h1>韓国語教育‐韓国文化専攻</h1>
+                <p class="subtitle">Korean Language Education and Korean Culture Major</p>
+            </div>
+            
+            <div class="section">
+                <h2>専攻紹介</h2>
+                <p>韓国語教育‐韓国文化専攻は、外国語としての韓国語教育理論と授業設計におけるバランスの取れた能力を備えると同時に、伝統から現代に至る韓国文化に関する人文的知識を有する専門家を養成することを目的としています。</p>
+                
+                <div class="curriculum">
+                    <div class="year-box">
+                        <h3>1年次</h3>
+                        <p>学術的韓国語：スピーキング・リーディング・ライティング・プレゼンテーション<br>
+                        生成系AIリテラシー</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>2年次</h3>
+                        <p>韓国語学概論<br>
+                        韓国語言語・文字規範<br>
+                        韓国文学の理解<br>
+                        対照言語学<br>
+                        韓国語文法研究</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>3年次</h3>
+                        <p>第二言語習得<br>
+                        発音教育<br>
+                        文法教育<br>
+                        理解教育<br>
+                        評価<br>
+                        教材開発</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>4年次</h3>
+                        <p>教育実習<br>
+                        現代大衆文化分析<br>
+                        物語分析</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>教育目標</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <strong>教育専門職の育成：</strong> 韓国語学、韓国語教育、韓国学を基盤として、授業運営能力・カリキュラム設計・評価・教材開発の能力を備えた教育専門職を育成する。
+                    </div>
+                    <div class="objective-item">
+                        <strong>文化理解とコンテンツ能力：</strong> 伝統文化から現代大衆文化に至る韓国文化の歴史性と同時代性を批判的に理解し、コンテンツ分析およびストーリーテリング活用能力を養成する。
+                    </div>
+                    <div class="objective-item">
+                        <strong>デジタルリテラシー：</strong> 変化する教育環境において生成系AIを含むデジタルツールを教授・学習効率化と学術コミュニケーション向上のための補助手段として適切に活用する素養を確立する。
+                    </div>
+                    <div class="objective-item">
+                        <strong>グローバルキャリア支援：</strong> 多文化・多言語環境における異文化コミュニケーション能力と現場実務能力を強化し、国内外の教育機関や文化コンテンツ産業でのキャリア発展を支援する。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>お問い合わせ</h2>
+                <div class="contact-info">
+                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    電話：+82-2-820-5084
+                </div>
+            </div>
+
+            <div class="audio-banner">
+                <h3>🔊 専攻紹介音声資料 (日本語)</h3>
+                <div class="audio-controls-box">
+                    <audio controls>
+                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_jp_long_251106.m4a" type="audio/mp4">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_jp_long_251106.m4a" download class="download-link">⬇ ダウンロード</a>
                 </div>
             </div>
         </div>
@@ -574,76 +715,15 @@
                     Điện thoại: +82-2-820-5084
                 </div>
             </div>
-        </div>
-        
-        <div id="ja" class="flyer">
-            <div class="header">
-                <div class="university-name">중앙대학교</div>
-                <div class="university-name-en">Chung-Ang University</div>
-                <div class="department-info">人文大学 国語国文学部</div>
-                <h1>韓国語教育‐韓国文化専攻</h1>
-                <p class="subtitle">Korean Language Education and Korean Culture Major</p>
-            </div>
-            
-            <div class="section">
-                <h2>専攻紹介</h2>
-                <p>韓国語教育‐韓国文化専攻は、外国語としての韓国語教育理論と授業設計におけるバランスの取れた能力を備えると同時に、伝統から現代に至る韓国文化に関する人文的知識を有する専門家を養成することを目的としています。</p>
-                
-                <div class="curriculum">
-                    <div class="year-box">
-                        <h3>1年次</h3>
-                        <p>学術的韓国語：スピーキング・リーディング・ライティング・プレゼンテーション<br>
-                        生成系AIリテラシー</p>
-                    </div>
-                    <div class="year-box">
-                        <h3>2年次</h3>
-                        <p>韓国語学概論<br>
-                        韓国語言語・文字規範<br>
-                        韓国文学の理解<br>
-                        対照言語学<br>
-                        韓国語文法研究</p>
-                    </div>
-                    <div class="year-box">
-                        <h3>3年次</h3>
-                        <p>第二言語習得<br>
-                        発音教育<br>
-                        文法教育<br>
-                        理解教育<br>
-                        評価<br>
-                        教材開発</p>
-                    </div>
-                    <div class="year-box">
-                        <h3>4年次</h3>
-                        <p>教育実習<br>
-                        現代大衆文化分析<br>
-                        物語分析</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>教育目標</h2>
-                <div class="objectives">
-                    <div class="objective-item">
-                        <strong>教育専門職の育成：</strong> 韓国語学、韓国語教育、韓国学を基盤として、授業運営能力・カリキュラム設計・評価・教材開発の能力を備えた教育専門職を育成する。
-                    </div>
-                    <div class="objective-item">
-                        <strong>文化理解とコンテンツ能力：</strong> 伝統文化から現代大衆文化に至る韓国文化の歴史性と同時代性を批判的に理解し、コンテンツ分析およびストーリーテリング活用能力を養成する。
-                    </div>
-                    <div class="objective-item">
-                        <strong>デジタルリテラシー：</strong> 変化する教育環境において生成系AIを含むデジタルツールを教授・学習効率化と学術コミュニケーション向上のための補助手段として適切に活用する素養を確立する。
-                    </div>
-                    <div class="objective-item">
-                        <strong>グローバルキャリア支援：</strong> 多文化・多言語環境における異文化コミュニケーション能力と現場実務能力を強化し、国内外の教育機関や文化コンテンツ産業でのキャリア発展を支援する。
-                    </div>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h2>お問い合わせ</h2>
-                <div class="contact-info">
-                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
-                    電話：+82-2-820-5084
+
+            <div class="audio-banner">
+                <h3>🔊 Nghe giới thiệu chuyên ngành (Tiếng Việt)</h3>
+                <div class="audio-controls-box">
+                    <audio controls>
+                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_vn_long_251106.m4a" type="audio/mp4">
+                        Your browser does support the audio element.
+                    </audio>
+                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_vn_long_251106.m4a" download class="download-link">⬇ Tải xuống</a>
                 </div>
             </div>
         </div>
@@ -659,24 +739,24 @@
             
             <div class="section">
                 <h2>Мэргэжлийн Танилцуулга</h2>
-                [cite_start]<p>“Солонгос хэлний боловсрол – Солонгос соёл” мэргэжил нь гадаад хэлний сургалт (Солонгос хэл)-ын онол, сургалтын хөтөлбөр боловсруулах мэдлэгийг, уламжлалт болон орчин үеийн Солонгос судлал-тай тэнцвэртэй хослуулсан мэргэжилтэн бэлтгэхийг зорьдог[cite: 59].</p>
+                <p>“Солонгос хэлний боловсрол – Солонгос соёл” мэргэжил нь гадаад хэлний сургалт (Солонгос хэл)-ын онол, сургалтын хөтөлбөр боловсруулах мэдлэгийг, уламжлалт болон орчин үеийн Солонгос судлал-тай тэнцвэртэй хослуулсан мэргэжилтэн бэлтгэхийг зорьдог.</p>
                 
                 <div class="curriculum">
                     <div class="year-box">
                         <h3>1-р курс</h3>
-                        [cite_start]<p>Их сургуулийн түвшний Солонгос хэл (ярих, унших, бичих, илтгэх)-ийн сууриа б ү рд үү лж, хувиргах (генератив) хиймэл оюун ухаан (ХОУ)-ыг сургалтын туслах хэрэгсэл болгон ашиглах дижитал бичиг ү сгийн чадвар эзэмшинэ[cite: 60].</p>
+                        <p>Их сургуулийн түвшний Солонгос хэл (ярих, унших, бичих, илтгэх)-ийн сууриа бүрдүүлж, хувиргах (генератив) хиймэл оюун ухаан (ХОУ)-ыг сургалтын туслах хэрэгсэл болгон ашиглах дижи탈 비디오 리터러시 чадвар эзэмшинэ.</p>
                     </div>
                     <div class="year-box">
                         <h3>2-р курс</h3>
-                        [cite_start]<p>Солонгос хэл шинжлэл, зөв бичих д ү рэм ба хэлний хэм хэм жээ (стандарт), Солонгос уран зохиолын ойлголт, харьцуулсан хэл судлал, Солонгос хэлний д ү рэм з ү й зэрэг хичээлээр онолын сууриа бататгана[cite: 61].</p>
+                        <p>Солонгос хэл шинжлэл, зөв бичих дүрэм ба хэлний хэм хэм жээ (стандарт), Солонгос уран зохиолын ойлголт, харьцуулсан хэл судлал, Солонгос хэлний дүрэм зүй зэрэг хичээлээр онолын сууриа бататгана.</p>
                     </div>
                     <div class="year-box">
                         <h3>3-р курс</h3>
-                        [cite_start]<p>Хоёрдогч хэлний сургалт (SLA), дуудлага (дуу авиа), д ү рэм, унших/сонсох чадварыг хөгж үү лэх, ү нэлгээ, сурах бичиг/сургалтын материал боловсруулах зэрэг мэргэжлийн хичээл үү дээр багшлах арга з ү йгээ г ү нзгийр үү лнэ[cite: 62].</p>
+                        <p>Хоёрдогч хэлний сургалт (SLA), дуудлага (дуу авиа), дүрэм, унших/сонсох чадварыг хөгжүүлэх, үнэлгээ, сурах бичиг/수르갈트인 материал болов스루울라흐 зэрэг мэргэжлийн хичээлүүдээр багшлах арга зүйгээ гүнзгийрүүлнэ.</p>
                     </div>
                     <div class="year-box">
                         <h3>4-р курс</h3>
-                        [cite_start]<p>Боловсролын дадлага хийж, орчин ү еийн олон нийтийн (поп) соёл ба өг үү лэмж (narrative)-ийн шинжилгээгээр портфолио-гоо б ү рд үү лнэ[cite: 63].</p>
+                        <p>보러베스로른 다드라가 히이지, 오르친 ү 예이인 오론 니이티인 (포ㅂ) 소ёл 바 오그위울렘제 (narrative)-이인 신지르게에그로 포르트훠리오-고오 브뤼드 위을네.</p>
                     </div>
                 </div>
             </div>
@@ -685,16 +765,16 @@
                 <h2>Боловсролын Зорилго</h2>
                 <div class="objectives">
                     <div class="objective-item">
-                        [cite_start]<strong>Боловсролын мэргэжилтэн бэлтгэх:</strong> Солонгос хэл шинжлэл, Солонгос хэлний боловсрол, Солонгос судлал-ын суурь мэдлэгтэй, анги удирдах, хөтөлбөр төлөвлөх, ү нэлгээ хийх, сургалтын материал/сурах бичиг боловсруулах чадвартай боловсролын мэргэжилтэн бэлтгэх[cite: 65].
+                        <strong>보로베스로른 메르지르텐 브릴트게흐:</strong> 소롱고스 헬 신지르레엘, 소롱고스 헬니 보로베스로르, 소롱고스 수드라르-인 수위르 메드레그테이, 앙기 우디르하흐, 허퇴뢰브흐 퇴뢰브르퇴뢰브르뢰흐, 위느레그에 히이ᄒ, 수르갈튼 마테리알/수라흐 비치그 보로베스로르하흐 차드와르테이 보로베스로른 메르지르텐 브릴트게흐.
                     </div>
                     <div class="objective-item">
-                        [cite_start]<strong>Соёлын ойлголт:</strong> Уламжлалт өвөөс орчин ү еийн соёл х ү ртэлх Солонгос соёлын т үү хэн болон орчин ү еийн чиг хандлагыг ш үү мжлэлтэйгээр ойлгох, контент шинжилгээ болон өг үү лэх урлаг (сторителлинг) ашиглах чадвар төлөвш үү лэх[cite: 66].
+                        <strong>소열은 오이로그로트:</strong> 우람즐라르트 오보으스 오르친 ү 예이인 소열 허르트레르 소롱고스 소열은 트위흐엔 보론 오르친 ү 예이인 치그 한드라긔 슈위움질렐트게에르 오이로그로흐, 콘텐트 신지르게에 보론 오그위울레흐 우르라그 (스토르테르링) 아시글라흐 차드와르 퇴뢰브슈위울레흐.
                     </div>
                     <div class="objective-item">
-                        [cite_start]<strong>Дижи탈 비디오 리터러시:</strong> Өөрчлөгдөж буй боловсролын орчинд хувиргах (генератив) ХОУ-г багтаасан дижи탈 хэрэгс үү 디이г 수르갈트-수르아흐 ү 일 얍츠인 ү 르 아쉬그 본론 아카데믹 하릴차아그 대쉬 률 훠흐 투스라흐 흐레그슬 볼론 오느ㅂ 초이 아시글라흐 디지탈 비치그 ү 스기인 차드와르 톨로ㅂ 슈 ү 률흐[cite: 67].
+                        <strong>디지탈 비디오 리터러시:</strong> 오어르치르가주 부이 보로베스로른 오르치늳 훠비르가흐 (게네르아티ㅂ) ХОУ-그 바그타아산 디지탈 흐레그스 үү 디이г 수르갈트-수르아흐 ү 일 얍츠인 ү 르 아쉬그 본론 아카데믹 하릴차아그 대쉬 률 훠흐 투스라흐 흐레그슬 볼론 오느ㅂ 초이 아시글라흐 디지탈 비치그 ү 스기인 차드와르 퇴뢰브슈위울레흐.
                     </div>
                     <div class="objective-item">
-                        [cite_start]<strong>Глобал карьерын дэмжлэг:</strong> Олон соёлт, олон хэлт орчинд соёл хоорондын харилцаа болон ажлын байрны практик 차드와르이г 대드 저르 게에르 허그 주 울즈, 도토오드/가다아든 볼로ㅂ 스롤 ын 바이 구울 락가, 소열 ын 콘텐튼 ү 일 드 벌 레엘 (살 벌)-트 아질라흐 볼롬 지이그 뎀 쥐흐[cite: 68].
+                        <strong>그로바르 카리에르은 뎀지르그:</strong> 오론 소열트, 오론 헬트 오르치늗 소열 호오론드인 하릴차아 보론 아즈른 바이야르니 프락티크 차드와르이г 대드 저르 게에르 허그 주 울즈, 도토오드/가다아든 보로베스로른 바이 구울 락가, 소열 은 콘텐튼 ү 일 드 벌 레엘 (살 벌)-트 아질라흐 볼롬 지이г 뎀 쥐흐.
                     </div>
                 </div>
             </div>
@@ -706,69 +786,18 @@
                     Утас: +82-2-820-5084
                 </div>
             </div>
-        </div>
 
-        <div class="section" style="margin-top: 50px;">
-            <h2>🎧 Introduction Podcast 다운로드 / 재생</h2>
-
-            <ul style="line-height: 1.8; list-style: none; padding-left: 0;">
-
-                <li>
-                    <strong>🇰🇷 한국어 (KR)</strong><br/>
-                    <audio controls>
-                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_kr_long_251106.m4a" type="audio/mp4">
-                    </audio><br/>
-                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_kr_long_251106.m4a" download>⬇ 다운로드</a>
-                </li>
-                <br/>
-
-                <li>
-                    <strong>🇺🇸 영어 (EN)</strong><br/>
+            <div class="audio-banner">
+                <h3>🔊 Мэргэжлийн танилцуулга аудио (Монгол)</h3>
+                <div class="audio-controls-box">
                     <audio controls>
                         <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" type="audio/mp4">
-                    </audio><br/>
-                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" download>⬇ 다운로드</a>
-                </li>
-                <br/>
-
-                <li>
-                    <strong>🇨🇳 중국어 (CN)</strong><br/>
-                    <audio controls>
-                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_cn_long_251106.m4a" type="audio/mp4">
-                    </audio><br/>
-                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_cn_long_251106.m4a" download>⬇ 다운로드</a>
-                </li>
-                <br/>
-
-                <li>
-                    <strong>🇯🇵 일본어 (JP)</strong><br/>
-                    <audio controls>
-                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_jp_long_251106.m4a" type="audio/mp4">
-                    </audio><br/>
-                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_jp_long_251106.m4a" download>⬇ 다운로드</a>
-                </li>
-                <br/>
-
-                <li>
-                    <strong>🇻🇳 베트남어 (VN)</strong><br/>
-                    <audio controls>
-                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_vn_long_251106.m4a" type="audio/mp4">
-                    </audio><br/>
-                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_vn_long_251106.m4a" download>⬇ 다운로드</a>
-                </li>
-                <br/>
-
-                <li>
-                    <strong>🇲🇳 몽골어 (MN)</strong> — (EN 음원 연결)<br/>
-                    <audio controls>
-                        <source src="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" type="audio/mp4">
-                    </audio><br/>
-                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" download>⬇ 다운로드</a>
-                </li>
-                <br/>
-            </ul>
+                        Таны хөтөч аудиог тоглуулах боломжгүй байна.
+                    </audio>
+                    <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" download class="download-link">⬇ Татах</a>
+                </div>
+            </div>
         </div>
-
     </div>
     
     <script>
@@ -785,8 +814,6 @@
             document.getElementById(lang).classList.add('active');
             
             // Activate clicked button
-            // event.target is undefined if called directly without an event
-            // Use querySelector to find the button corresponding to the language
             const activeButton = document.querySelector(`.language-selector button[onclick="switchLanguage('${lang}')"]`);
             if (activeButton) {
                 activeButton.classList.add('active');
@@ -795,4 +822,3 @@
     </script>
 </body>
 </html>
-
