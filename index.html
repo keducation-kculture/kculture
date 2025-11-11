@@ -105,7 +105,7 @@
             font-style: italic;
         }
         
-        /* 한국어교원 자격증 배너 스타일 */
+        /* 한국어교원 자격증 배너 스타일 (기존 스타일) */
         .certificate-banner {
             background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
             color: #333;
@@ -228,7 +228,7 @@
             text-decoration: underline;
         }
         
-        /* 새로운 음성 자료 배너 스타일 */
+        /* 오디오 자료 배너 스타일 */
         .audio-banner {
             background: #e8f4f8; /* Admission info light blue background */
             padding: 25px;
@@ -272,6 +272,39 @@
             white-space: nowrap;
         }
         
+        /* 입학 안내 섹션 스타일 (수정됨: text-align: center 추가) */
+        .admission-info {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center; /* <<< 가운데 정렬 추가 */
+        }
+        
+        .admission-info h3 {
+            font-size: 20px;
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .admission-info p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .admission-info a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .admission-info a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .flyer {
                 padding: 30px 20px;
@@ -363,28 +396,26 @@
                 <h2>교육 목표</h2>
                 <div class="objectives">
                     <div class="objective-item">
-                        <strong>교육 전문가 양성:</strong> 국어학·한국어교육학·한국학의 기초 위에 한국어 수업 운영 능력과 커리큘럼·평가·교재 개발 역량을 겸비한 교육 전문가를 기릅니다.
+                        교육 전문가 양성: 국어학·한국어교육학·한국학의 기초 위에 한국어 수업 운영 능력과 커리큘럼·평가·교재 개발 역량을 겸비한 교육 전문가를 기릅니다.
                     </div>
                     <div class="objective-item">
-                        <strong>문화 이해 및 콘텐츠 역량:</strong> 전통문화에서 현대 대중문화에 이르는 한국문화의 역사성과 동시대성을 비판적으로 이해하고, 콘텐츠 분석·스토리텔링 적용 능력을 함양합니다.
+                        문화 이해 및 콘텐츠 역량: 전통문화에서 현대 대중문화에 이르는 한국문화의 역사성과 동시대성을 비판적으로 이해하고, 콘텐츠 분석·스토리텔링 적용 능력을 함양합니다.
                     </div>
                     <div class="objective-item">
-                        <strong>디지털 리터러시:</strong> 변화하는 교육 환경에서 생성형 AI를 포함한 디지털 도구를 교수·학습 효율화와 학문 목적 의사소통 향상을 위한 보조 수단으로 적절히 활용하는 소양을 확립합니다.
+                        디지털 리터러시: 변화하는 교육 환경에서 생성형 AI를 포함한 디지털 도구를 교수·학습 효율화와 학문 목적 의사소통 향상을 위한 보조 수단으로 적절히 활용하는 소양을 확립합니다.
                     </div>
                     <div class="objective-item">
-                        <strong>글로벌 진출 지원:</strong> 다문화·다언어 환경에서의 이문화 소통 능력과 현장 실무 역량을 강화하여 국내외 교육기관과 문화콘텐츠 분야로의 진출을 지원합니다.
+                        글로벌 진출 지원: 다문화·다언어 환경에서의 이문화 소통 능력과 현장 실무 역량을 강화하여 국내외 교육기관과 문화콘텐츠 분야로의 진출을 지원합니다.
                     </div>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h2>문의</h2>
-                <div class="contact-info">
-                    이메일: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
-                    전화: +82-2-820-5084
                 </div>
             </div>
 
+            <div class="admission-info">
+                <h3>📜 입학 안내</h3>
+                <p>입학 관련 자세한 정보: <a href="https://oia.cau.ac.kr/">https://oia.cau.ac.kr/</a></p>
+                <p>2026학년도 1학기 2차 모집: 2025년 11월 12일 ~ 11월 26일</p>
+            </div>
+            
             <div class="audio-banner">
                 <h3>🔊 전공 소개 음성 자료 (Korean)</h3>
                 <div class="audio-controls-box">
@@ -393,6 +424,14 @@
                         브라우저가 오디오 재생을 지원하지 않습니다.
                     </audio>
                     <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_kr_long_251106.m4a" download class="download-link">⬇ 다운로드</a>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>문의</h2>
+                <div class="contact-info">
+                    이메일: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    전화: +82-2-820-5084
                 </div>
             </div>
         </div>
@@ -406,6 +445,10 @@
                 <p class="subtitle">한국어교육-한국문화 전공</p>
             </div>
             
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> Obtainable: Korean Language Teacher Certificate Level 2
+            </div>
+
             <div class="section">
                 <h2>Major Introduction</h2>
                 <p>The Korean Language Education and Korean Culture Major aims to cultivate professionals equipped with a balanced competence in Korean language education theory and instructional design for teaching Korean as a foreign language, along with humanistic knowledge of both traditional and contemporary Korean culture.</p>
@@ -446,28 +489,26 @@
                 <h2>Educational Objectives</h2>
                 <div class="objectives">
                     <div class="objective-item">
-                        <strong>Education Professionals:</strong> Develop education professionals with classroom management skills and competencies in curriculum design, assessment, and materials development, grounded in Korean linguistics, Korean language education, and Korean studies.
+                        Education Professionals: Develop education professionals with classroom management skills and competencies in curriculum design, assessment, and materials development, grounded in Korean linguistics, Korean language education, and Korean studies.
                     </div>
                     <div class="objective-item">
-                        <strong>Cultural Understanding:</strong> Foster critical understanding of the historical and contemporary dimensions of Korean culture—from traditional heritage to modern popular culture—and build skills in content analysis and storytelling.
+                        Cultural Understanding: Foster critical understanding of the historical and contemporary dimensions of Korean culture—from traditional heritage to modern popular culture—and build skills in content analysis and storytelling.
                     </div>
                     <div class="objective-item">
-                        <strong>Digital Literacy:</strong> Establish digital literacy, including appropriate use of generative AI, as an auxiliary means to enhance teaching-learning effectiveness and academic communication in evolving educational environments.
+                        Digital Literacy: Establish digital literacy, including appropriate use of generative AI, as an auxiliary means to enhance teaching-learning effectiveness and academic communication in evolving educational environments.
                     </div>
                     <div class="objective-item">
-                        <strong>Global Career Support:</strong> Strengthen intercultural communication and practical skills for multicultural and multilingual settings to support career advancement in domestic and international educational institutions and cultural content industries.
+                        Global Career Support: Strengthen intercultural communication and practical skills for multicultural and multilingual settings to support career advancement in domestic and international educational institutions and cultural content industries.
                     </div>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h2>Contact</h2>
-                <div class="contact-info">
-                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
-                    Phone: +82-2-820-5084
                 </div>
             </div>
 
+            <div class="admission-info">
+                <h3>📜 Admission Information</h3>
+                <p>For detailed information on admission: <a href="https://oia.cau.ac.kr/">https://oia.cau.ac.kr/</a></p>
+                <p>2026 Spring Semester, 2nd Round Application: Nov 12 ~ Nov 26, 2025</p>
+            </div>
+            
             <div class="audio-banner">
                 <h3>🔊 Major Introduction Audio (English)</h3>
                 <div class="audio-controls-box">
@@ -476,6 +517,14 @@
                         Your browser does not support the audio element.
                     </audio>
                     <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" download class="download-link">⬇ Download</a>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    Phone: +82-2-820-5084
                 </div>
             </div>
         </div>
@@ -489,9 +538,13 @@
                 <p class="subtitle">Korean Language Education and Korean Culture Major</p>
             </div>
             
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> 可获得韩国国立国语院认证的二级韩国语教师资格证
+            </div>
+            
             <div class="section">
                 <h2>专业介绍</h2>
-                <p>韩国语教育-韩国文化专业旨在培养既具备对外韩国语教学理论与教学设计等均衡能力，又具备传统与当代韩国文化人文学知识的专业人才。</p>
+                <p>韩国语教育-韩国文化专业旨在培养既具备对外韩国语教学理论与教学设计等均衡能力，又具备传统与当代韩国文化人文学知识的专业人才.</p>
                 
                 <div class="curriculum">
                     <div class="year-box">
@@ -503,7 +556,8 @@
                         <h3>第二学年</h3>
                         <p>韩国语学概论<br>
                         韩国语语文规范<br>
-                        韩国文学的理解<                        对比语言学<br>
+                        韩国文学的理解<br>
+                        对比语言学<br>
                         韩国语语法研究</p>
                     </div>
                     <div class="year-box">
@@ -528,28 +582,26 @@
                 <h2>教育目标</h2>
                 <div class="objectives">
                     <div class="objective-item">
-                        <strong>教育专业人才培养：</strong> 培养具备课堂管理能力、课程设计、评估与教材开发等能力，并以韩国语言学、韩国语教育及韩国学为基础的教育专业人才。
+                        教育专业人才培养: 培养具备课堂管理能力、课程设计、评估与教材开发等能力，并以韩国语言学、韩国语教育及韩国学为基础的教育专业人才.
                     </div>
                     <div class="objective-item">
-                        <strong>文化理解与内容能力：</strong> 培养学生对韩国文化的历史性与当代性（从传统遗产到现代流行文化）的批判性理解，并发展内容分析与叙事运用能力。
+                        文化理解与内容能力: 培养学生对韩国文化的历史性与当代性（从传统遗产到现代流行文化）的批判性理解，并发展内容分析与叙事运用能力.
                     </div>
                     <div class="objective-item">
-                        <strong>数字素养：</strong> 建立数字素养，包括恰当使用生成式人工智能等工具，以辅助提高教学与学习效率以及在不断发展的教育环境中的学术交流能力。
+                        数字素养: 建立数字素养, 包含恰当使用生成式人工智能等工具, 以辅助提高教学与学习效率以及在不断发展的教育环境中的学术交流能力.
                     </div>
                     <div class="objective-item">
-                        <strong>全球职业发展支持：</strong> 增强在多元文化、多语言环境中的跨文化交流能力和现场实务能力，以支持其在国内外教育机构和文化内容产业中的职业发展。
+                        全球职业发展支持: 增强在多元文化、多语言环境中的跨文化交流能力和现场实务能力, 以支持其在国内外教育机构和文化内容产业中的职业发展.
                     </div>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h2>联系方式</h2>
-                <div class="contact-info">
-                    邮箱：<a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
-                    电话：+82-2-820-5084
                 </div>
             </div>
 
+            <div class="admission-info">
+                <h3>📜 入学信息</h3>
+                <p>入学相关详细信息: <a href="https://oia.cau.ac.kr/">https://oia.cau.ac.kr/</a></p>
+                <p>2026学年 1学期 2次招生: 2025年 11月 12日 ~ 11月 26日</p>
+            </div>
+            
             <div class="audio-banner">
                 <h3>🔊 专业介绍音频 (中文)</h3>
                 <div class="audio-controls-box">
@@ -558,6 +610,14 @@
                         Your browser does not support the audio element.
                     </audio>
                     <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_cn_long_251106.m4a" download class="download-link">⬇ 下载</a>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>联系方式</h2>
+                <div class="contact-info">
+                    邮箱：<a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    电话：+82-2-820-5084
                 </div>
             </div>
         </div>
@@ -571,9 +631,13 @@
                 <p class="subtitle">Korean Language Education and Korean Culture Major</p>
             </div>
             
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> 国立国語院認定 韓国語教員2級資格取得可能
+            </div>
+            
             <div class="section">
                 <h2>専攻紹介</h2>
-                <p>韓国語教育‐韓国文化専攻は、外国語としての韓国語教育理論と授業設計におけるバランスの取れた能力を備えると同時に、伝統から現代に至る韓国文化に関する人文的知識を有する専門家を養成することを目的としています。</p>
+                <p>韓国語教育‐韓国文化専攻は、外国語としての韓国語教育理論と授業設計におけるバランスの取れた能力を備えると同時に、伝統から現代に至る韓国文化に関する人文的知識を有する専門家を養成することを目的としています.</p>
                 
                 <div class="curriculum">
                     <div class="year-box">
@@ -611,28 +675,26 @@
                 <h2>教育目標</h2>
                 <div class="objectives">
                     <div class="objective-item">
-                        <strong>教育専門職の育成：</strong> 韓国語学、韓国語教育、韓国学を基盤として、授業運営能力・カリキュラム設計・評価・教材開発の能力を備えた教育専門職を育成する。
+                        教育専門職の育成： 韓国語学、韓国語教育、韓国学を基盤として、授業運営能力・カリキュラム設計・評価・教材開発の能力を備えた教育専門職を育成する.
                     </div>
                     <div class="objective-item">
-                        <strong>文化理解とコンテンツ能力：</strong> 伝統文化から現代大衆文化に至る韓国文化の歴史性と同時代性を批判的に理解し、コンテンツ分析およびストーリーテリング活用能力を養成する。
+                        文化理解とコンテンツ能力： 伝統文化から現代大衆文化に至る韓国文化の歴史性と同時代性を批判的に理解し、コンテンツ分析およびストーリーテリング活用能力を養成する.
                     </div>
                     <div class="objective-item">
-                        <strong>デジタルリテラシー：</strong> 変化する教育環境において生成系AIを含むデジタルツールを教授・学習効率化と学術コミュニケーション向上のための補助手段として適切に活用する素養を確立する。
+                        デジタルリテラシー： 変化する教育環境において生成系AIを含むデジタルツールを教授・学習効率化と学術コミュニケーション向上のための補助手段として適切に活用する素養を確立する.
                     </div>
                     <div class="objective-item">
-                        <strong>グローバルキャリア支援：</strong> 多文化・多言語環境における異文化コミュニケーション能力と現場実務能力を強化し、国内外の教育機関や文化コンテンツ産業でのキャリア発展を支援する。
+                        グローバルキャリア支援： 多文化・多言語環境における異文化コミュニケーション能力と現場実務能力を強化し、国内外の教育機関や文化コンテンツ産業でのキャリア発展を支援する.
                     </div>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h2>お問い合わせ</h2>
-                <div class="contact-info">
-                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
-                    電話：+82-2-820-5084
                 </div>
             </div>
 
+            <div class="admission-info">
+                <h3>📜 入学情報</h3>
+                <p>入学に関する詳細情報: <a href="https://oia.cau.ac.kr/">https://oia.cau.ac.kr/</a></p>
+                <p>2026学年度 1学期 2次募集: 2025年 11月 12日 ~ 11月 26日</p>
+            </div>
+            
             <div class="audio-banner">
                 <h3>🔊 専攻紹介音声資料 (日本語)</h3>
                 <div class="audio-controls-box">
@@ -641,6 +703,14 @@
                         Your browser does not support the audio element.
                     </audio>
                     <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_jp_long_251106.m4a" download class="download-link">⬇ ダウンロード</a>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>お問い合わせ</h2>
+                <div class="contact-info">
+                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    電話：+82-2-820-5084
                 </div>
             </div>
         </div>
@@ -652,6 +722,10 @@
                 <div class="department-info">Khoa Nhân văn, Bộ môn Ngôn ngữ và Văn học Hàn Quốc</div>
                 <h1>Chuyên ngành Giáo dục Tiếng Hàn – Văn hoá Hàn Quốc</h1>
                 <p class="subtitle">Korean Language Education and Korean Culture Major</p>
+            </div>
+            
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> Có thể nhận Chứng chỉ Giáo viên Tiếng Hàn cấp 2 được công nhận bởi Viện Ngôn ngữ Quốc gia Hàn Quốc
             </div>
             
             <div class="section">
@@ -694,28 +768,26 @@
                 <h2>Mục tiêu đào tạo</h2>
                 <div class="objectives">
                     <div class="objective-item">
-                        <strong>Chuyên gia giáo dục:</strong> Đào tạo đội ngũ chuyên gia giáo dục có kỹ năng quản lý lớp học, thiết kế chương trình, đánh giá và phát triển giáo trình trên cơ sở Ngôn ngữ học Tiếng Hàn, Giáo dục Tiếng Hàn và Hàn Quốc học.
+                        Chuyên gia giáo dục: Đào tạo đội ngũ chuyên gia giáo dục có kỹ năng quản lý lớp học, thiết kế chương trình, đánh giá và phát triển giáo trình trên cơ sở Ngôn ngữ học Tiếng Hàn, Giáo dục Tiếng Hàn và Hàn Quốc học.
                     </div>
                     <div class="objective-item">
-                        <strong>Hiểu biết văn hoá:</strong> Bồi dưỡng khả năng hiểu biết phê phán về tính lịch sử và tính đương đại của văn hoá Hàn Quốc – từ di sản truyền thống đến văn hoá đại chúng hiện đại – đồng thời phát triển kỹ năng phân tích nội dung và vận dụng tự sự.
+                        Hiểu biết văn hoá: Bồi dưỡng khả năng hiểu biết phê phán về tính lịch sử và tính đương đại của văn hoá Hàn Quốc – từ di sản truyền thống đến văn hoá đại chúng hiện đại – đồng thời phát triển kỹ năng phân tích nội dung và vận dụng tự sự.
                     </div>
                     <div class="objective-item">
-                        <strong>Năng lực số:</strong> Hình thành năng lực số, bao gồm việc sử dụng hợp lý trí tuệ nhân tạo sinh sinh như một phương tiện hỗ trợ nâng cao hiệu quả dạy – học và giao tiếp học thuật trong môi trường giáo dục đang thay đổi.
+                        Năng lực số: Hình thành năng lực số, bao gồm việc sử dụng hợp lý trí tuệ nhân tạo sinh sinh như một phương tiện hỗ trợ nâng cao hiệu quả dạy – học và giao tiếp học thuật trong môi trường giáo dục đang thay đổi.
                     </div>
                     <div class="objective-item">
-                        <strong>Phát triển nghề nghiệp toàn cầu:</strong> Tăng cường năng lực giao tiếp liên văn hoá và kỹ năng thực tiễn trong môi trường đa văn hoá, đa ngôn ngữ nhằm hỗ trợ phát triển nghề nghiệp tại các cơ sở giáo dục và ngành công nghiệp nội dung văn hoá trong và ngoài nước.
+                        Phát triển nghề nghiệp toàn cầu: Tăng cường năng lực giao tiếp liên văn hoá và kỹ năng thực tiễn trong môi trường đa văn hoá, đa ngôn ngữ nhằm hỗ trợ phát triển nghề nghiệp tại các cơ sở giáo dục và ngành công nghiệp nội dung văn hoá trong và ngoài nước.
                     </div>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h2>Liên hệ</h2>
-                <div class="contact-info">
-                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
-                    Điện thoại: +82-2-820-5084
                 </div>
             </div>
 
+            <div class="admission-info">
+                <h3>📜 Thông tin tuyển sinh</h3>
+                <p>Thông tin chi tiết về tuyển sinh: <a href="https://oia.cau.ac.kr/">https://oia.cau.ac.kr/</a></p>
+                <p>Tuyển sinh vòng 2 Học kỳ 1 năm 2026: 12/11/2025 ~ 26/11/2025</p>
+            </div>
+            
             <div class="audio-banner">
                 <h3>🔊 Nghe giới thiệu chuyên ngành (Tiếng Việt)</h3>
                 <div class="audio-controls-box">
@@ -724,6 +796,14 @@
                         Your browser does support the audio element.
                     </audio>
                     <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_vn_long_251106.m4a" download class="download-link">⬇ Tải xuống</a>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>Liên hệ</h2>
+                <div class="contact-info">
+                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    Điện thoại: +82-2-820-5084
                 </div>
             </div>
         </div>
@@ -737,6 +817,10 @@
                 <p class="subtitle">Korean Language Education and Korean Culture Major</p>
             </div>
             
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> Солонгос хэлний багшийн 2-р зэргийн гэрчилгээ авах боломжтой
+            </div>
+
             <div class="section">
                 <h2>Мэргэжлийн Танилцуулга</h2>
                 <p>“Солонгос хэлний боловсрол – Солонгос соёл” мэргэжил нь гадаад хэлний сургалт (Солонгос хэл)-ын онол, сургалтын хөтөлбөр боловсруулах мэдлэгийг, уламжлалт болон орчин үеийн Солонгос судлал-тай тэнцвэртэй хослуулсан мэргэжилтэн бэлтгэхийг зорьдог.</p>
@@ -744,19 +828,29 @@
                 <div class="curriculum">
                     <div class="year-box">
                         <h3>1-р курс</h3>
-                        <p>Их сургуулийн түвшний Солонгос хэл (ярих, унших, бичих, илтгэх)-ийн сууриа бүрдүүлж, хувиргах (генератив) хиймэл оюун ухаан (ХОУ)-ыг сургалтын туслах хэрэгсэл болгон ашиглах дижи탈 비디오 리터러시 чадвар эзэмшинэ.</p>
+                        <p>Их сургуулийн түвшний Солонгос хэл (ярих, унших, бичих, илтгэх)-ийн сууриа бүрдүүлж, хувиргах (генератив) хиймэл оюун ухаан (ХОУ)-ыг сургалтын туслах хэрэгсэл болгон ашиглах дижитал бичиг үсгийн чадвар эзэмшинэ.</p>
                     </div>
                     <div class="year-box">
                         <h3>2-р курс</h3>
-                        <p>Солонгос хэл шинжлэл, зөв бичих дүрэм ба хэлний хэм хэм жээ (стандарт), Солонгос уран зохиолын ойлголт, харьцуулсан хэл судлал, Солонгос хэлний дүрэм зүй зэрэг хичээлээр онолын сууриа бататгана.</p>
+                        <p>Солонгос хэл шинжлэл<br>
+                        зөв бичих дүрэм ба хэлний хэм хэм жээ (стандарт)<br>
+                        Солонгос уран зохиолын ойлголт<br>
+                        харьцуулсан хэл судлал<br>
+                        Солонгос хэлний дүрэм зүй</p>
                     </div>
                     <div class="year-box">
                         <h3>3-р курс</h3>
-                        <p>Хоёрдогч хэлний сургалт (SLA), дуудлага (дуу авиа), дүрэм, унших/сонсох чадварыг хөгжүүлэх, үнэлгээ, сурах бичиг/수르갈트인 материал болов스루울라흐 зэрэг мэргэжлийн хичээлүүдээр багшлах арга зүйгээ гүнзгийрүүлнэ.</p>
+                        <p>хоёрдогч хэлний сургалт (SLA)<br>
+                        дуудлага (дуу авиа)<br>
+                        дүрэм<br>
+                        унших/сонсох чадварыг хөгжүүлэх<br>
+                        үнэлгээ<br>
+                        сурах бичиг/сургалтын материал боловсруулах</p>
                     </div>
                     <div class="year-box">
                         <h3>4-р курс</h3>
-                        <p>보러베스로른 다드라가 히이지, 오르친 ү 예이인 오론 니이티인 (포ㅂ) 소ёл 바 오그위울렘제 (narrative)-이인 신지르게에그로 포르트훠리오-고오 브뤼드 위을네.</p>
+                        <p>боловсролын дадлага хийж<br>
+                        орчин үеийн олон нийтийн (поп) соёл ба өгүүлэмж (narrative)-ийн шинжилгээгээр портфолио-гоо бүрдүүлнэ.</p>
                     </div>
                 </div>
             </div>
@@ -765,28 +859,26 @@
                 <h2>Боловсролын Зорилго</h2>
                 <div class="objectives">
                     <div class="objective-item">
-                        <strong>보로베스로른 메르지르텐 브릴트게흐:</strong> 소롱고스 헬 신지르레엘, 소롱고스 헬니 보로베스로르, 소롱고스 수드라르-인 수위르 메드레그테이, 앙기 우디르하흐, 허퇴뢰브흐 퇴뢰브르퇴뢰브르뢰흐, 위느레그에 히이ᄒ, 수르갈튼 마테리알/수라흐 비치그 보로베스로르하흐 차드와르테이 보로베스로른 메르지르텐 브릴트게흐.
+                        Боловсролын мэргэжилтэн бэлтгэх: Солонгос хэл шинжлэл, Солонгос хэлний боловсрол, Солонгос судлал-ын суурь мэдлэгтэй, анги удирдах, хөтөлбөр төлөвлөх, үнэлгээ хийх, сургалтын материал/сурах бичиг боловсруулах чадвартай боловсролын мэргэжилтэн бэлтгэх.
                     </div>
                     <div class="objective-item">
-                        <strong>소열은 오이로그로트:</strong> 우람즐라르트 오보으스 오르친 ү 예이인 소열 허르트레르 소롱고스 소열은 트위흐엔 보론 오르친 ү 예이인 치그 한드라긔 슈위움질렐트게에르 오이로그로흐, 콘텐트 신지르게에 보론 오그위울레흐 우르라그 (스토르테르링) 아시글라흐 차드와르 퇴뢰브슈위울레흐.
+                        Соёлын ойлголт: Уламжлалт өвөөс орчин үеийн соёл хүртэлх Солонгос соёлын түүхэн болон орчин үеийн чиг хандлагыг шүүмжлэлтэйгээр ойлгох, контент шинжилгээ болон өгүүлэх урлаг (сторителлинг) ашиглах чадвар төлөвшүүлэх.
                     </div>
                     <div class="objective-item">
-                        <strong>디지탈 비디오 리터러시:</strong> 오어르치르가주 부이 보로베스로른 오르치늳 훠비르가흐 (게네르아티ㅂ) ХОУ-그 바그타아산 디지탈 흐레그스 үү 디이г 수르갈트-수르아흐 ү 일 얍츠인 ү 르 아쉬그 본론 아카데믹 하릴차아그 대쉬 률 훠흐 투스라흐 흐레그슬 볼론 오느ㅂ 초이 아시글라흐 디지탈 비치그 ү 스기인 차드와르 퇴뢰브슈위울레흐.
+                        Дижи탈 비чиг үсэг: Өөрчлөгдөж буй боловсролын орчинд хувиргах (генератив) ХОУ-г багтаасан дижи탈 хэрэгслүүдийг сургалт-сурах үйл явцын үр ашиг болон академик харилцааг дээшлүүлэх туслах хэрэгсэл болгон оновчтой ашиглах дижи탈 비чиг үсгийн чадвар төлөвшүүлэх.
                     </div>
                     <div class="objective-item">
-                        <strong>그로바르 카리에르은 뎀지르그:</strong> 오론 소열트, 오론 헬트 오르치늗 소열 호오론드인 하릴차아 보론 아즈른 바이야르니 프락티크 차드와르이г 대드 저르 게에르 허그 주 울즈, 도토오드/가다아든 보로베스로른 바이 구울 락가, 소열 은 콘텐튼 ү 일 드 벌 레엘 (살 벌)-트 아질라흐 볼롬 지이г 뎀 쥐흐.
+                        Глобал карьерын дэмжлэг: Олон соёлт, олон хэлт орчинд соёл хоорондын харилцаа болон ажлын байрны практик чадварыг дээд зэргээр хөгжүүлж, дотоод/гадаадын боловсролын байгууллага, соёлын контентын үйлдвэрлэл (салбар)-т ажиллах боломжийг дэмжих.
                     </div>
-                </div>
-            </div>
-            
-            <div class="contact">
-                <h2>Холбоо барих</h2>
-                <div class="contact-info">
-                    Цахим шуудан: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
-                    Утас: +82-2-820-5084
                 </div>
             </div>
 
+            <div class="admission-info">
+                <h3>📜 Элсэлтийн Мэдээлэл</h3>
+                <p>Элсэлтийн дэлгэрэнгүй мэдээлэл: <a href="https://oia.cau.ac.kr/">https://oia.cau.ac.kr/</a></p>
+                <p>2026 оны хаврын улирлын 2 дахь элсэлт: 2025 оны 11 сарын 12 ~ 11 сарын 26</p>
+            </div>
+            
             <div class="audio-banner">
                 <h3>🔊 Мэргэжлийн танилцуулга аудио (Монгол)</h3>
                 <div class="audio-controls-box">
@@ -795,6 +887,14 @@
                         Таны хөтөч аудиог тоглуулах боломжгүй байна.
                     </audio>
                     <a href="https://raw.githubusercontent.com/keducation-kculture/kculture/main/introduction_podcast_en_long_251106.m4a" download class="download-link">⬇ Татах</a>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>Холбоо барих</h2>
+                <div class="contact-info">
+                    Цахим шуудан: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    Утас: +82-2-820-5084
                 </div>
             </div>
         </div>
