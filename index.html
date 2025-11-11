@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국어교육-한국문화 전공 안내</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .language-selector {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .language-selector button {
+            margin: 5px;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: 2px solid #0066cc;
+            background: white;
+            color: #0066cc;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .language-selector button:hover {
+            background: #0066cc;
+            color: white;
+        }
+        
+        .language-selector button.active {
+            background: #0066cc;
+            color: white;
+        }
+        
+        .flyer {
+            display: none;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .flyer.active {
+            display: block;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #0066cc;
+        }
+        
+        .university-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #003d82;
+            margin-bottom: 5px;
+        }
+        
+        .university-name-en {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .department-info {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .certificate-banner {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            color: #333;
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            border: 3px solid #FF6B6B;
+        }
+        
+        .certificate-banner .icon {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section h2 {
+            font-size: 24px;
+            color: #0066cc;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #0066cc;
+        }
+        
+        .section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+        }
+        
+        .objectives {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .objective-item {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .objective-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .objective-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .curriculum {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .year-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        
+        .year-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .year-box p {
+            font-size: 14px;
+            color: white;
+            line-height: 1.6;
+            text-align: left;
+        }
+        
+        .contact {
+            background: #f0f7ff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 24px;
+            color: #0066cc;
+            margin-bottom: 15px;
+            border: none;
+            padding: 0;
+        }
+        
+        .contact-info {
+            font-size: 18px;
+            color: #333;
+            line-height: 2;
+        }
+        
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Admission Info Section */
+        .admission-info {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .admission-info h3 {
+            font-size: 20px;
+            color: #0066cc;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .admission-info .icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .admission-info p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .admission-info a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .admission-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Voice Banner Style (Image-like) */
+        .voice-banner {
+            background: linear-gradient(90deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .voice-banner .text {
+            display: flex;
+            align-items: center;
+        }
+
+        .voice-banner .icon {
+            font-size: 28px;
+            margin-right: 15px;
+        }
+        
+        .voice-banner .url-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        /* End of Voice Banner Style */
+        
+        @media (max-width: 768px) {
+            .flyer {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .curriculum {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-selector button {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button onclick="switchLanguage('ko')" class="active">한국어</button>
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('zh')">中文</button>
+            <button onclick="switchLanguage('ja')">日本語</button>
+            <button onclick="switchLanguage('vi')">Tiếng Việt</button>
+            <button onclick="switchLanguage('mn')">Монгол</button>
+        </div>
+        
+        <div id="ko" class="flyer active">
+            <div class="header">
+                <div class="university-name">중앙대학교</div>
+                <div class="university-name-en">Chung-Ang University</div>
+                <div class="department-info">인문대학 국어국문학부</div>
+                <h1>한국어교육-한국문화 전공</h1>
+                <p class="subtitle">Korean Language Education and Korean Culture Major</p>
+            </div>
+            
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> 국립국어원 인정 한국어교원 2급 자격증 취득 가능
+            </div>
+            
+            <div class="section">
+                <h2>전공 소개</h2>
+                <p>한국어교육-한국문화 전공은 외국어로서의 한국어교육 이론과 수업 설계, 그리고 한국의 전통 및 현대 문화를 아우르는 인문콘텐츠 소양을 균형 있게 갖춘 인재 양성을 목표로 합니다.</p>
+                
+                <div class="curriculum">
+                    <div class="year-box">
+                        <h3>1학년</h3>
+                        <p>학문 목적 한국어 말하기·읽기·쓰기·발표<br>
+                        생성형 AI 활용 소양</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>2학년</h3>
+                        <p>한국어학개론<br>
+                        어문규범<br>
+                        문학<br>
+                        대조언어학<br>
+                        문법론</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>3학년</h3>
+                        <p>외국어습득론<br>
+                        발음교육<br>
+                        문법교육<br>
+                        이해교육<br>
+                        평가<br>
+                        교재개발</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>4학년</h3>
+                        <p>교육실습<br>
+                        현대 대중문화 분석<br>
+                        서사 분석</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>교육 목표</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <strong>교육 전문가 양성:</strong> 국어학·한국어교육학·한국학의 기초 위에 한국어 수업 운영 능력과 커리큘럼·평가·교재 개발 역량을 겸비한 교육 전문가를 기릅니다.
+                    </div>
+                    <div class="objective-item">
+                        <strong>문화 이해 및 콘텐츠 역량:</strong> 전통문화에서 현대 대중문화에 이르는 한국문화의 역사성과 동시대성을 비판적으로 이해하고, 콘텐츠 분석·스토리텔링 적용 능력을 함양합니다.
+                    </div>
+                    <div class="objective-item">
+                        <strong>디지털 리터러시:</strong> 변화하는 교육 환경에서 생성형 AI를 포함한 디지털 도구를 교수·학습 효율화와 학문 목적 의사소통 향상을 위한 보조 수단으로 적절히 활용하는 소양을 확립합니다.
+                    </div>
+                    <div class="objective-item">
+                        <strong>글로벌 진출 지원:</strong> 다문화·다언어 환경에서의 이문화 소통 능력과 현장 실무 역량을 강화하여 국내외 교육기관과 문화콘텐츠 분야로의 진출을 지원합니다.
+                    </div>
+                </div>
+            </div>
+
+            <div class="admission-info">
+                <h3><span class="icon">📄</span> 입학 안내</h3>
+                <p>입학 관련 자세한 정보: <a href="https://oia.cau.ac.kr/" target="_blank">https://oia.cau.ac.kr/</a></p>
+                <p>2026학년도 1학기 2차 모집: 2025년 11월 12일 ~ 11월 26일</p>
+                <div class="voice-banner">
+                    <span class="text"><span class="icon">📢</span> 전공 소개 음성 자료, 들어보세요!</span>
+                    <span class="url-box">URL: [여기에 음성 자료 링크 입력]</span>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>문의</h2>
+                <div class="contact-info">
+                    이메일: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    전화: +82-2-820-5084
+                </div>
+            </div>
+        </div>
+        
+        <div id="en" class="flyer">
+            <div class="header">
+                <div class="university-name">중앙대학교</div>
+                <div class="university-name-en">Chung-Ang University</div>
+                <div class="department-info">College of Liberal Arts, Division of Korean Language and Literature</div>
+                <h1>Korean Language Education and Korean Culture Major</h1>
+                <p class="subtitle">한국어교육-한국문화 전공</p>
+            </div>
+            
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> National Institute of Korean Language accredited Level 2 Korean Language Teacher Certificate can be acquired.
+            </div>
+
+            <div class="section">
+                <h2>Major Introduction</h2>
+                <p>The Korean Language Education and Korean Culture Major aims to cultivate professionals equipped with a balanced competence in Korean language education theory and instructional design for teaching Korean as a foreign language, along with humanistic knowledge of both traditional and contemporary Korean culture.</p>
+                
+                <div class="curriculum">
+                    <div class="year-box">
+                        <h3>Year 1</h3>
+                        <p>Academic Korean: Speaking, Reading, Writing, Presentation<br>
+                        Generative AI Literacy</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>Year 2</h3>
+                        <p>Introduction to Korean Linguistics<br>
+                        Korean Orthology<br>
+                        Understanding Korean Literature<br>
+                        Contrastive Linguistics<br>
+                        Studies in Korean Grammar</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>Year 3</h3>
+                        <p>Second Language Acquisition<br>
+                        Pronunciation Teaching<br>
+                        Grammar Teaching<br>
+                        Comprehension Teaching<br>
+                        Assessment<br>
+                        Materials Development</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>Year 4</h3>
+                        <p>Teaching Practicum<br>
+                        Contemporary Popular Culture Analysis<br>
+                        Narrative Analysis</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Educational Objectives</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <strong>Education Professionals:</strong> Develop education professionals with classroom management skills and competencies in curriculum design, assessment, and materials development, grounded in Korean linguistics, Korean language education, and Korean studies.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Cultural Understanding:</strong> Foster critical understanding of the historical and contemporary dimensions of Korean culture—from traditional heritage to modern popular culture—and build skills in content analysis and storytelling.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Digital Literacy:</strong> Establish digital literacy, including appropriate use of generative AI, as an auxiliary means to enhance teaching-learning effectiveness and academic communication in evolving educational environments.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Global Career Support:</strong> Strengthen intercultural communication and practical skills for multicultural and multilingual settings to support career advancement in domestic and international educational institutions and cultural content industries.
+                    </div>
+                </div>
+            </div>
+
+            <div class="admission-info">
+                <h3><span class="icon">📄</span> Admission Guide</h3>
+                <p>For detailed information on admission: <a href="https://oia.cau.ac.kr/" target="_blank">https://oia.cau.ac.kr/</a></p>
+                <p>2026 Academic Year 1st Semester 2nd Intake Period: November 12 ~ November 26, 2025</p>
+                <div class="voice-banner">
+                    <span class="text"><span class="icon">📢</span> Listen to the Major Introduction Voice Material!</span>
+                    <span class="url-box">URL: [Insert Voice Material Link Here]</span>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    Phone: +82-2-820-5084
+                </div>
+            </div>
+        </div>
+        
+        <div id="zh" class="flyer">
+            <div class="header">
+                <div class="university-name">중앙대학교</div>
+                <div class="university-name-en">Chung-Ang University</div>
+                <div class="department-info">人文学院 韩国语言文学系</div>
+                <h1>韩国语教育-韩国文化专业</h1>
+                <p class="subtitle">Korean Language Education and Korean Culture Major</p>
+            </div>
+            
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> 可获取韩国国立国语院认证的韩国语教员2级资格证。
+            </div>
+
+            <div class="section">
+                <h2>专业介绍</h2>
+                <p>韩国语教育-韩国文化专业旨在培养既具备对外韩国语教学理论与教学设计等均衡能力，又具备传统与当代韩国文化人文学知识的专业人才.</p>
+                
+                <div class="curriculum">
+                    <div class="year-box">
+                        <h3>第一学年</h3>
+                        <p>学术韩语：口语、阅读、写作、展示<br>
+                        生成式AI素养</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>第二学年</h3>
+                        <p>韩国语学概论<br>
+                        韩国语语文规范<br>
+                        韩国文学的理解<br>
+                        对比语言学<br>
+                        韩国语语法研究</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>第三学年</h3>
+                        <p>第二语言习得<br>
+                        发音教学<br>
+                        语法教学<br>
+                        理解教学<br>
+                        评估<br>
+                        教材开发</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>第四学年</h3>
+                        <p>教育实习<br>
+                        当代流行文化分析<br>
+                        叙事分析</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>教育目标</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <strong>教育专业人才培养：</strong> 培养具备课堂管理能力、课程设计、评估与教材开发等能力，并以韩国语言学、韩国语教育及韩国学为基础的教育专业人才.
+                    </div>
+                    <div class="objective-item">
+                        <strong>文化理解与内容能力：</strong> 培养学生对韩国文化的历史性与当代性（从传统遗产到现代流行文化）的批判性理解，并发展内容分析与叙事运用能力.
+                    </div>
+                    <div class="objective-item">
+                        <strong>数字素养：</strong> 建立数字素养，包括恰当使用生成式人工智能等工具，以辅助提高教学与学习效率以及在不断发展的教育环境中的学术交流能力.
+                    </div>
+                    <div class="objective-item">
+                        <strong>全球职业发展支持：</strong> 增强在多元文化、多语言环境中的跨文化交流能力和现场实务能力，以支持其在国内外教育机构和文化内容产业中的职业发展.
+                    </div>
+                </div>
+            </div>
+
+            <div class="admission-info">
+                <h3><span class="icon">📄</span> 入学指南</h3>
+                <p>入学相关详细信息: <a href="https://oia.cau.ac.kr/" target="_blank">https://oia.cau.ac.kr/</a></p>
+                <p>2026学年度 第1学期 第二批招募: 2025年 11月 12日 ~ 11月 26日</p>
+                <div class="voice-banner">
+                    <span class="text"><span class="icon">📢</span> 听取专业介绍的音频资料!</span>
+                    <span class="url-box">URL: [在这里输入音频资料链接]</span>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>联系方式</h2>
+                <div class="contact-info">
+                    邮箱：<a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    电话：+82-2-820-5084
+                </div>
+            </div>
+        </div>
+        
+        <div id="vi" class="flyer">
+            <div class="header">
+                <div class="university-name">중앙대학교</div>
+                <div class="university-name-en">Chung-Ang University</div>
+                <div class="department-info">Khoa Nhân văn, Bộ môn Ngôn ngữ và Văn học Hàn Quốc</div>
+                <h1>Chuyên ngành Giáo dục Tiếng Hàn – Văn hoá Hàn Quốc</h1>
+                <p class="subtitle">Korean Language Education and Korean Culture Major</p>
+            </div>
+            
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> Có thể nhận được Chứng chỉ Giáo viên Tiếng Hàn cấp 2 được công nhận bởi Viện Ngôn ngữ Quốc gia Hàn Quốc.
+            </div>
+
+            <div class="section">
+                <h2>Giới thiệu chuyên ngành</h2>
+                <p>Chuyên ngành Giáo dục Tiếng Hàn – Văn hoá Hàn Quốc nhằm đào tạo những chuyên gia vừa có năng lực cân bằng về lý thuyết giảng dạy tiếng Hàn như một ngoại ngữ và thiết kế chương trình giảng dạy, vừa có kiến thức nhân văn về văn hoá Hàn Quốc truyền thống và đương đại.</p>
+                
+                <div class="curriculum">
+                    <div class="year-box">
+                        <h3>Năm thứ nhất</h3>
+                        <p>Tiếng Hàn học thuật: Nói, Đọc, Viết, Thuyết trình<br>
+                        Năng lực sử dụng AI sinh sinh</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>Năm thứ hai</h3>
+                        <p>Khái luận Ngôn ngữ học Tiếng Hàn<br>
+                        Quy phạm Ngôn ngữ – Văn tự Tiếng Hàn<br>
+                        Hiểu biết về Văn học Hàn Quốc<br>
+                        Ngôn ngữ học Đối chiếu<br>
+                        Nghiên cứu Ngữ pháp Tiếng Hàn</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>Năm thứ ba</h3>
+                        <p>Tiếp thu Ngôn ngữ thứ hai<br>
+                        Giảng dạy Phát âm<br>
+                        Giảng dạy Ngữ pháp<br>
+                        Giảng dạy Hiểu<br>
+                        Đánh giá<br>
+                        Phát triển Giáo trình</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>Năm thứ tư</h3>
+                        <p>Thực tập Giáo dục<br>
+                        Phân tích Văn hoá Đại chúng Đương đại<br>
+                        Phân tích Tự sự</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Mục tiêu đào tạo</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <strong>Chuyên gia giáo dục:</strong> Đào tạo đội ngũ chuyên gia giáo dục có kỹ năng quản lý lớp học, thiết kế chương trình, đánh giá và phát triển giáo trình trên cơ sở Ngôn ngữ học Tiếng Hàn, Giáo dục Tiếng Hàn và Hàn Quốc học.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Hiểu biết văn hoá:</strong> Bồi dưỡng khả năng hiểu biết phê phán về tính lịch sử và tính đương đại của văn hoá Hàn Quốc – từ di sản truyền thống đến văn hoá đại chúng hiện đại – đồng thời phát triển kỹ năng phân tích nội dung và vận dụng tự sự.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Năng lực số:</strong> Hình thành năng lực số, bao gồm việc sử dụng hợp lý trí tuệ nhân tạo sinh sinh như một phương tiện hỗ trợ nâng cao hiệu quả dạy – học và giao tiếp học thuật trong môi trường giáo dục đang thay đổi.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Phát triển nghề nghiệp toàn cầu:</strong> Tăng cường năng lực giao tiếp liên văn hoá và kỹ năng thực tiễn trong môi trường đa văn hoá, đa ngôn ngữ nhằm hỗ trợ phát triển nghề nghiệp tại các cơ sở giáo dục và ngành công nghiệp nội dung văn hoá trong và ngoài nước.
+                    </div>
+                </div>
+            </div>
+
+            <div class="admission-info">
+                <h3><span class="icon">📄</span> Hướng dẫn Tuyển sinh</h3>
+                <p>Thông tin chi tiết về tuyển sinh: <a href="https://oia.cau.ac.kr/" target="_blank">https://oia.cau.ac.kr/</a></p>
+                <p>Kỳ tuyển sinh đợt 2, Học kỳ 1, Năm học 2026: 12 ~ 26 tháng 11 năm 2025</p>
+                <div class="voice-banner">
+                    <span class="text"><span class="icon">📢</span> Nghe tài liệu giới thiệu chuyên ngành bằng giọng nói!</span>
+                    <span class="url-box">URL: [Nhập liên kết tài liệu giọng nói tại đây]</span>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>Liên hệ</h2>
+                <div class="contact-info">
+                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    Điện thoại: +82-2-820-5084
+                </div>
+            </div>
+        </div>
+        
+        <div id="ja" class="flyer">
+            <div class="header">
+                <div class="university-name">중앙대학교</div>
+                <div class="university-name-en">Chung-Ang University</div>
+                <div class="department-info">人文大学 国語国文学部</div>
+                <h1>韓国語教育‐韓国文化専攻</h1>
+                <p class="subtitle">Korean Language Education and Korean Culture Major</p>
+            </div>
+            
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> 国立国語院認定 韓国語教員 2級 資格の取得が可能
+            </div>
+
+            <div class="section">
+                <h2>専攻紹介</h2>
+                <p>韓国語教育‐韓国文化専攻は、外国語としての韓国語教育理論と授業設計におけるバランスの取れた能力を備えると同時に、伝統から現代に至る韓国文化に関する人文的知識を有する専門家を養成することを目的としています.</p>
+                
+                <div class="curriculum">
+                    <div class="year-box">
+                        <h3>1年次</h3>
+                        <p>学術的韓国語：スピーキング・リーディング・ライティング・プレゼンテーション<br>
+                        生成系AIリテラシー</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>2年次</h3>
+                        <p>韓国語学概論<br>
+                        韓国語言語・文字規範<br>
+                        韓国文学の理解<br>
+                        対照言語学<br>
+                        韓国語文法研究</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>3年次</h3>
+                        <p>第二言語習得<br>
+                        発音教育<br>
+                        文法教育<br>
+                        理解教育<br>
+                        評価<br>
+                        教材開発</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>4年次</h3>
+                        <p>教育実習<br>
+                        現代大衆文化分析<br>
+                        物語分析</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>教育目標</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <strong>教育専門職の育成：</strong> 韓国語学、韓国語教育、韓国学を基盤として、授業運営能力・カリキュラム設計・評価・教材開発の能力を備えた教育専門職を育成する.
+                    </div>
+                    <div class="objective-item">
+                        <strong>文化理解とコンテンツ能力：</strong> 伝統文化から現代大衆文化に至る韓国文化の歴史性と同時代性を批判的に理解し、コンテンツ分析およびストーリーテリング活用能力を養成する.
+                    </div>
+                    <div class="objective-item">
+                        <strong>デジタルリテラシー：</strong> 変化する教育環境において生成系 AIを含むデジタルツールを教授・学習効率化と学術コミュニケーション向上のための補助手段として適切に活用する素養を確立する.
+                    </div>
+                    <div class="objective-item">
+                        <strong>グローバルキャリア支援：</strong> 多文化・多言語環境における異文化コミュニケーション能力と現場実務能力を強化し、国内外の教育機関や文化コンテンツ産業でのキャリア発展を支援する.
+                    </div>
+                </div>
+            </div>
+
+            <div class="admission-info">
+                <h3><span class="icon">📄</span> 入学案内</h3>
+                <p>入学に関する詳細情報: <a href="https://oia.cau.ac.kr/" target="_blank">https://oia.cau.ac.kr/</a></p>
+                <p>2026学年度 第1学期 第2次募集: 2025年 11月 12日 ~ 11月 26日</p>
+                <div class="voice-banner">
+                    <span class="text"><span class="icon">📢</span> 専攻紹介の音声資料を聞いてみましょう!</span>
+                    <span class="url-box">URL: [ここに音声資料リンクを入力]</span>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>お問い合わせ</h2>
+                <div class="contact-info">
+                    Email: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    電話：+82-2-820-5084
+                </div>
+            </div>
+        </div>
+
+        <div id="mn" class="flyer">
+            <div class="header">
+                <div class="university-name">중앙대학교</div>
+                <div class="university-name-en">Chung-Ang University</div>
+                <div class="department-info">Хүмүүнлэгийн ухааны сургууль, Солонгос хэл, утга зохиолын тэнхим</div>
+                <h1>Солонгос хэлний боловсрол – Солонгос соёл</h1>
+                <p class="subtitle">Korean Language Education and Korean Culture Major</p>
+            </div>
+
+            <div class="certificate-banner">
+                <span class="icon">🎓</span> Үндэсний Солонгос Хэлний Хүрээлэнгээс баталсан Солонгос хэлний багш (2-р зэрэг)-ийн гэрчилгээ авах боломжтой.
+            </div>
+            
+            <div class="section">
+                <h2>Мэргэжлийн Танилцуулга</h2>
+                <p>“Солонгос хэлний боловсрол – Солонгос соёл” мэргэжил нь гадаад хэлний сургалт (Солонгос хэл)-ын онол, сургалтын хөтөлбөр боловсруулах мэдлэгийг, уламжлалт болон орчин үеийн Солонгос судлал-тай тэнцвэртэй хослуулсан мэргэжилтэн бэлтгэхийг зорьдог.</p>
+                
+                <div class="curriculum">
+                    <div class="year-box">
+                        <h3>1-р курс</h3>
+                        <p>Их сургуулийн түвшний Солонгос хэл: ярих, унших, бичих, илтгэх<br>
+                        Хувиргах (генератив) хиймэл оюун ухаан (ХОУ)-ыг сургалтын туслах хэрэгсэл болгон ашиглах дижитал бичиг үсгийн чадвар</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>2-р курс</h3>
+                        <p>Солонгос хэл шинжлэл<br>
+                        Зөв бичих дүрэм ба хэлний хэм хэм жээ (стандарт)<br>
+                        Солонгос уран зохиолын ойлголт<br>
+                        Харьцуулсан хэл судлал<br>
+                        Солонгос хэлний дүрэм зүй</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>3-р курс</h3>
+                        <p>Хоёрдогч хэлний сургалт (SLA)<br>
+                        Дуудлага (дуу авиа)<br>
+                        Дүрэм<br>
+                        Унших / сонсох чадварыг хөгжүүлэх<br>
+                        Үнэлгээ<br>
+                        Сурах бичиг/сургалтын материал боловсруулах</p>
+                    </div>
+                    <div class="year-box">
+                        <h3>4-р курс</h3>
+                        <p>Боловсролын дадлага<br>
+                        Орчин үеийн олон нийтийн (поп) соёл шинжилгээ<br>
+                        Өгүүлэмж (narrative)-ийн шинжилгээ</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Боловсролын Зорилго</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <strong>Боловсролын мэргэжилтэн бэлтгэх:</strong> Солонгос хэл шинжлэл, Солонгос хэлний боловсрол, Солонгос судлал-ын суурь мэдлэгтэй, анги удирдах, хөтөлбөр төлөвлөх, үнэлгээ хийх, сургалтын материал/сурах бичиг боловсруулах чадвартай боловсролын мэргэжилтэн бэлтгэх.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Соёлын ойлголт ба контентын чадвар:</strong> Уламжлалт өвөөс орчин үеийн соёл хүртэлх Солонгос соёлын түүхэн болон орчин үеийн чиг хандлагыг шүүмжлэлтэйгээр ойлгох, контент шинжилгээ болон өгүүлэх урлаг (сторителлинг) ашиглах чадвар төлөвшүүлэх.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Дижитал бичиг үсгийн чадвар:</strong> Өөрчлөгдөж буй боловсролын орчинд хувиргах (генератив) ХОУ-г багтаасан дижитал хэрэгслүүдийг сургалт-сурах үйл явцын үр ашиг болон академик харилцааг дээшлүүлэх туслах хэрэгсэл болгон оновчтой ашиглах дижитал бичиг үсгийн чадвар төлөвшүүлэх.
+                    </div>
+                    <div class="objective-item">
+                        <strong>Дэлхийн түвшний карьерын дэмжлэг:</strong> Олон соёлт, олон хэлт орчинд соёл хоорондын харилцаа болон ажлын байрны практик чадварыг дээд зэргээр хөгжүүлж, дотоод/гадаадын боловсролын байгууллага, соёлын контентын үйлдвэрлэл ( салбар )-т ажиллах боломжийг дэмжих.
+                    </div>
+                </div>
+            </div>
+
+            <div class="admission-info">
+                <h3><span class="icon">📄</span> Элсэлтийн Мэдээлэл</h3>
+                <p>Элсэлтийн талаарх дэлгэрэнгүй мэдээлэл: <a href="https://oia.cau.ac.kr/" target="_blank">https://oia.cau.ac.kr/</a></p>
+                <p>2026 оны хичээлийн жилийн 1-р улирлын 2-р элсэлт: 2025 оны 11-р сарын 12-ны өдрөөс 11-р сарын 26-ны өдөр</p>
+                <div class="voice-banner">
+                    <span class="text"><span class="icon">📢</span> Мэргэжлийн танилцуулгын дуут материалыг сонсоно уу!</span>
+                    <span class="url-box">URL: [Энд дуут материалын холбоосыг оруулах]</span>
+                </div>
+            </div>
+            
+            <div class="contact">
+                <h2>Холбоо барих</h2>
+                <div class="contact-info">
+                    И-мэйл: <a href="mailto:kculture@cau.ac.kr">kculture@cau.ac.kr</a><br>
+                    Утас: +82-2-820-5084
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function switchLanguage(lang) {
+            // Hide all flyers
+            const flyers = document.querySelectorAll('.flyer');
+            flyers.forEach(f => f.classList.remove('active'));
+            
+            // Remove active from all buttons
+            const buttons = document.querySelectorAll('.language-selector button');
+            buttons.forEach(b => b.classList.remove('active'));
+            
+            // Show selected flyer
+            document.getElementById(lang).classList.add('active');
+            
+            // Activate corresponding button using lang code for robust selection
+            const clickedButton = Array.from(buttons).find(b => {
+                const text = b.textContent.toLowerCase();
+                if (lang === 'ko') return text.includes('한국어');
+                if (lang === 'en') return text.includes('english');
+                if (lang === 'zh') return text.includes('中文');
+                if (lang === 'ja') return text.includes('日本語');
+                if (lang === 'vi') return text.includes('tiếng việt');
+                if (lang === 'mn') return text.includes('монгол');
+                return false;
+            });
+            
+            if (clickedButton) {
+                clickedButton.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
